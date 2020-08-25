@@ -1,4 +1,4 @@
-package com.geodeveloper.theholyquran.models
+package com.geodeveloper.theholyquran.models.quraneditions
 
 class QuranEditioData(val identifier: String? = null,
                       val language: String? = null,

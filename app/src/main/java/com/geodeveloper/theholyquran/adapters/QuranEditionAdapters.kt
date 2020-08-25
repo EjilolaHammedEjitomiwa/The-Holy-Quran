@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.geodeveloper.theholyquran.R
-import com.geodeveloper.theholyquran.models.QuranEditionModel
+import com.geodeveloper.theholyquran.models.quraneditions.QuranEditionModel
 import kotlinx.android.synthetic.main.d_quran_edition_details.*
 
 class QuranEditionAdapters(val context: Context, val editionLists: QuranEditionModel) :

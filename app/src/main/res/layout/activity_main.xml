@@ -84,6 +84,7 @@
             android:layout_weight="1">
 
             <LinearLayout
+                android:id="@+id/main_readQuran"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -98,6 +99,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:text="Read Quran"
                     android:gravity="center_horizontal"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />

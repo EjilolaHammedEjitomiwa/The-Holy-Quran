@@ -6,16 +6,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.geodeveloper.theholyquran.R
 import com.geodeveloper.theholyquran.adapters.QuranEditionAdapters
-import com.geodeveloper.theholyquran.models.QuranEditionModel
+import com.geodeveloper.theholyquran.models.quraneditions.QuranEditionModel
 import com.geodeveloper.theholyquran.service.QuranService
 import com.geodeveloper.theholyquran.service.ServiceBuilder
 import com.jaredrummler.materialspinner.MaterialSpinner
 import kotlinx.android.synthetic.main.activity_quran_edition.*
 import kotlinx.android.synthetic.main.d_quran_edition_filter_dialogue.*
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
