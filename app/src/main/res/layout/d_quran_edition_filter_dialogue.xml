@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter by type"
+        android:textColor="@color/colorPrimary" />
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/filter_dialogue_selectType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_corner_bg"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        app:ms_hint="Select type"
+        app:ms_hint_color="@color/black"
+        app:ms_text_color="@color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Filter by format"
+        android:textColor="@color/colorPrimary" />
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/filter_dialogue_selectFormat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_corner_bg"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        app:ms_hint="Select format"
+        app:ms_hint_color="@color/black"
+        app:ms_text_color="@color/black" />
+
+    <Button
+        android:id="@+id/filter_dialogue_filterBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/d_rounded_btn_bg"
+        android:text="Filter"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</LinearLayout>
