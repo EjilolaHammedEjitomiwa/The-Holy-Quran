@@ -1,6 +1,7 @@
 package com.geodeveloper.theholyquran.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,8 @@ import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.geodeveloper.theholyquran.R
-import com.geodeveloper.theholyquran.models.quran.QuranModel
+import com.geodeveloper.theholyquran.activities.EnglishQuranActivity
+import com.geodeveloper.theholyquran.models.englishquran.QuranModel
 
 
 class QuranAdapter (val context: Context, val quranList: QuranModel) : RecyclerView.Adapter<QuranAdapter.ViewHolder?>() {
@@ -26,6 +28,18 @@ class QuranAdapter (val context: Context, val quranList: QuranModel) : RecyclerV
         val quran = quranList.data!!.surah!![position]
         holder.name.text = quran.englishName
         holder.meaning.text = quran.englishNameTranslation
+
+        holder.itemView.setOnClickListener {
+            val ayah = quran.ayah!!
+            val ayahLength = ayah.size-1
+            val intent = Intent(context,EnglishQuranActivity::class.java)
+            intent.putExtra("surah",ayah)
+            intent.putExtra("englishName",quran.englishName)
+            intent.putExtra("arabicName",quran.name)
+            intent.putExtra("start_page",ayah[0].page)
+            intent.putExtra("end_page",ayah[ayahLength].page)
+            context.startActivity(intent)
+        }
     }
 
     inner class ViewHolder(@NonNull itemView: View) : RecyclerView.ViewHolder(itemView) {

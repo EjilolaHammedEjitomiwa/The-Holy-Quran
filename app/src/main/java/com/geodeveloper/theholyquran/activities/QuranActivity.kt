@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.Toast
 import com.geodeveloper.theholyquran.R
 import com.geodeveloper.theholyquran.adapters.QuranAdapter
-import com.geodeveloper.theholyquran.models.quran.QuranModel
+import com.geodeveloper.theholyquran.models.englishquran.QuranModel
 import com.geodeveloper.theholyquran.service.QuranService
 import com.geodeveloper.theholyquran.service.ServiceBuilder
 import kotlinx.android.synthetic.main.activity_quran.*
@@ -21,6 +21,10 @@ class QuranActivity : AppCompatActivity() {
         setContentView(R.layout.activity_quran)
 
         getQuranList()
+
+        quran_activity_iconSearch.setOnClickListener {
+            quran_activity_searchContainer.visibility = View.VISIBLE
+        }
     }
 
     private fun getQuranList() {
@@ -30,12 +34,11 @@ class QuranActivity : AppCompatActivity() {
             override fun onResponse(call: Call<QuranModel>, response: Response<QuranModel>) {
                 if (response.isSuccessful) {
                     val quranLists = response.body()!!
-                    quran_activity_recyclerView.adapter = QuranAdapter(this@QuranActivity, quranLists)
+                    quran_activity_recyclerView.adapter = QuranAdapter(this@QuranActivity,quranLists)
                 }
                 try {
                     quran_activity_progress.visibility = View.GONE
-                } catch (e: IllegalStateException) {
-                }
+                } catch (e: IllegalStateException) { }
             }
             override fun onFailure(call: Call<QuranModel>, t: Throwable) {
                 Toast.makeText(this@QuranActivity, "$t", Toast.LENGTH_LONG).show()

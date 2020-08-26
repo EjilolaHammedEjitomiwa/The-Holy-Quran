@@ -1,6 +1,6 @@
 package com.geodeveloper.theholyquran.service
 
-import com.geodeveloper.theholyquran.models.quran.QuranModel
+import com.geodeveloper.theholyquran.models.englishquran.QuranModel
 import com.geodeveloper.theholyquran.models.quraneditions.QuranEditionModel
 import retrofit2.Call
 import retrofit2.http.GET
@@ -15,6 +15,6 @@ interface QuranService {
     fun getQuranEditionsFilter(@QueryMap filter:HashMap<String,String?>): Call<QuranEditionModel>
 
     //get list of quran, surahs
-    @GET("quran/en.asad")
+    @GET("quran/en.sahih")
     fun  getQuran(): Call<QuranModel>
 }
