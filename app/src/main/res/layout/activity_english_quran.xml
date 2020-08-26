@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.EnglishQuranActivity">
+    tools:context=".activities.ReadEnglishQuranActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/main_appBarLayout"

@@ -14,7 +14,11 @@ interface QuranService {
     @GET("edition")
     fun getQuranEditionsFilter(@QueryMap filter:HashMap<String,String?>): Call<QuranEditionModel>
 
-    //get list of quran, surahs
+    //get english translation
     @GET("quran/en.sahih")
-    fun  getQuran(): Call<QuranModel>
+    fun  getEnglishQuran(): Call<QuranModel>
+    //get english translation
+    @GET("quran/ar.abdullahbasfar")
+    fun  getArabicQuran(): Call<QuranModel>
+
 }

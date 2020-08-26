@@ -4,16 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activities.QuranActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent">
-
-
-
-
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/main_appBarLayout"
         android:layout_width="match_parent"
@@ -36,7 +31,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="The Holy Quran App"
+                android:text="The Holy Quran"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +55,7 @@
             android:layout_weight="1">
 
             <LinearLayout
-                android:id="@+id/main_quranEditions"
+                android:id="@+id/quran_activity_englishTranslation"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -76,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center_horizontal"
-                    android:text="Quran Editions"
+                    android:text="English Translations"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />
 
@@ -91,7 +86,7 @@
             android:layout_weight="1">
 
             <LinearLayout
-                android:id="@+id/main_readQuran"
+                android:id="@+id/quran_activity_arabic"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -106,7 +101,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Read Quran"
+                    android:text="Arabic Quran"
                     android:gravity="center_horizontal"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp" />

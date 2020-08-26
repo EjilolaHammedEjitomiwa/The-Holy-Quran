@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.EnglishQuranActivity"></activity>
-        <activity android:name=".activities.QuranActivity" />
+        <activity android:name=".activities.QuranActivity"></activity>
+        <activity android:name=".activities.ArabicQuranActivity" />
+        <activity android:name=".activities.ReadEnglishQuranActivity" />
+        <activity android:name=".activities.EnglishQuranActivity" />
         <activity android:name=".activities.QuranEditionActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

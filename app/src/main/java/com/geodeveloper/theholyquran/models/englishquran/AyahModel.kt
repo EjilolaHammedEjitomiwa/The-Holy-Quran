@@ -20,7 +20,9 @@ class AyahModel(
     @SerializedName("ruku")
     val ruku: Int? = null,
     @SerializedName("hizbQuarter")
-    val hizbQuarter: Int? = null
+    val hizbQuarter: Int? = null,
+    @SerializedName("audio")
+    val audio: String? = null
     //    val sajda:String? = null
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
@@ -31,7 +33,8 @@ class AyahModel(
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readValue(Int::class.java.classLoader) as? Int
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString()
     ) {
     }
 
@@ -44,6 +47,7 @@ class AyahModel(
         parcel.writeValue(page)
         parcel.writeValue(ruku)
         parcel.writeValue(hizbQuarter)
+        parcel.writeString(audio)
     }
 
     override fun describeContents(): Int {

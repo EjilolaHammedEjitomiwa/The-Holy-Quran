@@ -9,11 +9,10 @@ import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.geodeveloper.theholyquran.R
-import com.geodeveloper.theholyquran.activities.EnglishQuranActivity
+import com.geodeveloper.theholyquran.activities.ReadEnglishQuranActivity
 import com.geodeveloper.theholyquran.models.englishquran.QuranModel
 
-
-class QuranAdapter (val context: Context, val quranList: QuranModel) : RecyclerView.Adapter<QuranAdapter.ViewHolder?>() {
+class ArabicQuranAdapter  (val context: Context, val quranList: QuranModel) : RecyclerView.Adapter<ArabicQuranAdapter.ViewHolder?>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.d_quran_design, parent, false)
@@ -29,17 +28,17 @@ class QuranAdapter (val context: Context, val quranList: QuranModel) : RecyclerV
         holder.name.text = quran.englishName
         holder.meaning.text = quran.englishNameTranslation
 
-        holder.itemView.setOnClickListener {
-            val ayah = quran.ayah!!
-            val ayahLength = ayah.size-1
-            val intent = Intent(context,EnglishQuranActivity::class.java)
-            intent.putExtra("surah",ayah)
-            intent.putExtra("englishName",quran.englishName)
-            intent.putExtra("arabicName",quran.name)
-            intent.putExtra("start_page",ayah[0].page)
-            intent.putExtra("end_page",ayah[ayahLength].page)
-            context.startActivity(intent)
-        }
+//        holder.itemView.setOnClickListener {
+//            val ayah = quran.ayah!!
+//            val ayahLength = ayah.size-1
+//            val intent = Intent(context, ReadEnglishQuranActivity::class.java)
+//            intent.putExtra("surah",ayah)
+//            intent.putExtra("englishName",quran.englishName)
+//            intent.putExtra("arabicName",quran.name)
+//            intent.putExtra("start_page",ayah[0].page)
+//            intent.putExtra("end_page",ayah[ayahLength].page)
+//            context.startActivity(intent)
+//        }
     }
 
     inner class ViewHolder(@NonNull itemView: View) : RecyclerView.ViewHolder(itemView) {

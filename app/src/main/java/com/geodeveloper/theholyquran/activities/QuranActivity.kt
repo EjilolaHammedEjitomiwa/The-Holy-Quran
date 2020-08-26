@@ -1,49 +1,21 @@
 package com.geodeveloper.theholyquran.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import com.geodeveloper.theholyquran.R
-import com.geodeveloper.theholyquran.adapters.QuranAdapter
-import com.geodeveloper.theholyquran.models.englishquran.QuranModel
-import com.geodeveloper.theholyquran.service.QuranService
-import com.geodeveloper.theholyquran.service.ServiceBuilder
-import kotlinx.android.synthetic.main.activity_quran.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.lang.IllegalStateException
+import kotlinx.android.synthetic.main.activity_quran2.*
 
 class QuranActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quran)
+        setContentView(R.layout.activity_quran2)
 
-        getQuranList()
-
-        quran_activity_iconSearch.setOnClickListener {
-            quran_activity_searchContainer.visibility = View.VISIBLE
+        quran_activity_englishTranslation.setOnClickListener {
+            startActivity(Intent(this,EnglishQuranActivity::class.java))
         }
-    }
-
-    private fun getQuranList() {
-        val quranService = ServiceBuilder.buildService(QuranService::class.java)
-        val requestCall = quranService.getQuran()
-        requestCall.enqueue(object : Callback<QuranModel> {
-            override fun onResponse(call: Call<QuranModel>, response: Response<QuranModel>) {
-                if (response.isSuccessful) {
-                    val quranLists = response.body()!!
-                    quran_activity_recyclerView.adapter = QuranAdapter(this@QuranActivity,quranLists)
-                }
-                try {
-                    quran_activity_progress.visibility = View.GONE
-                } catch (e: IllegalStateException) { }
-            }
-            override fun onFailure(call: Call<QuranModel>, t: Throwable) {
-                Toast.makeText(this@QuranActivity, "$t", Toast.LENGTH_LONG).show()
-            }
-        })
-
+        quran_activity_arabic.setOnClickListener {
+            startActivity(Intent(this,ArabicQuranActivity::class.java))
+        }
     }
 }
