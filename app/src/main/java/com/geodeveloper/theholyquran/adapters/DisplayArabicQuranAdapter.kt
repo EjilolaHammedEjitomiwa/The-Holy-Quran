@@ -1,5 +1,6 @@
 package com.geodeveloper.theholyquran.adapters
 
+import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.geodeveloper.theholyquran.R
 import com.geodeveloper.theholyquran.models.englishquran.AyahModel
+import kotlinx.android.synthetic.main.ayah_number_design.*
 
 class DisplayArabicQuranAdapter (val context: Context, val itemList: ArrayList<AyahModel>) : RecyclerView.Adapter<DisplayArabicQuranAdapter.ViewHolder?>() {
 
@@ -23,11 +25,13 @@ class DisplayArabicQuranAdapter (val context: Context, val itemList: ArrayList<A
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val quran = itemList[position]
-        holder.text.text = quran.text
+        holder.text.text = quran.text.toString()
+        holder.number.text = quran.numberInSurah.toString()
 
     }
     inner class ViewHolder(@NonNull itemView: View) : RecyclerView.ViewHolder(itemView) {
         val text: TextView = itemView.findViewById(R.id.quran_arabic_design_text)
+        val number:TextView = itemView.findViewById(R.id.quran_arabic_design_number)
 
     }
 }

@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.geodeveloper.theholyquran.R
+import com.geodeveloper.theholyquran.activities.ReadArabicQuran
 import com.geodeveloper.theholyquran.activities.ReadEnglishQuranActivity
 import com.geodeveloper.theholyquran.models.englishquran.QuranModel
 
@@ -28,17 +29,17 @@ class ArabicQuranAdapter  (val context: Context, val quranList: QuranModel) : Re
         holder.name.text = quran.englishName
         holder.meaning.text = quran.englishNameTranslation
 
-//        holder.itemView.setOnClickListener {
-//            val ayah = quran.ayah!!
-//            val ayahLength = ayah.size-1
-//            val intent = Intent(context, ReadEnglishQuranActivity::class.java)
-//            intent.putExtra("surah",ayah)
-//            intent.putExtra("englishName",quran.englishName)
-//            intent.putExtra("arabicName",quran.name)
-//            intent.putExtra("start_page",ayah[0].page)
-//            intent.putExtra("end_page",ayah[ayahLength].page)
-//            context.startActivity(intent)
-//        }
+        holder.itemView.setOnClickListener {
+            val ayah = quran.ayah!!
+            val ayahLength = ayah.size-1
+            val intent = Intent(context, ReadArabicQuran::class.java)
+            intent.putExtra("surah",ayah)
+            intent.putExtra("englishName",quran.englishName)
+            intent.putExtra("arabicName",quran.name)
+            intent.putExtra("start_page",ayah[0].page)
+            intent.putExtra("end_page",ayah[ayahLength].page)
+            context.startActivity(intent)
+        }
     }
 
     inner class ViewHolder(@NonNull itemView: View) : RecyclerView.ViewHolder(itemView) {

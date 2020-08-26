@@ -74,5 +74,7 @@ class ReadEnglishQuranActivity : AppCompatActivity() {
             Toast.makeText(this,"limit reached",Toast.LENGTH_LONG).show()
         }
         adapter!!.notifyDataSetChanged()
+        english_quran_activity_recyclerview.scrollToPosition(0)
+
     }
 }
