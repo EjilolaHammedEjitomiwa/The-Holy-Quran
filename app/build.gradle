@@ -25,6 +25,13 @@ android {
     androidExtensions {
         experimental = true
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
@@ -46,5 +53,12 @@ dependencies {
 
     implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
     implementation 'com.jaredrummler:material-spinner:1.3.1'
+    implementation 'com.mikhaellopez:circularprogressbar:3.0.3'
+    implementation 'com.github.TutorialsAndroid:KAlertDialog:v9.0.19'
+    implementation 'com.github.jeancsanchez:JcPlayer:2.6.16'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.download.library:Downloader:4.1.3'
+    implementation "androidx.tonyodev.fetch2:xfetch2:3.1.5"
+
 
 }

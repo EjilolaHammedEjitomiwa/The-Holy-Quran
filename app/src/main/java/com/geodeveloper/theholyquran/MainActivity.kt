@@ -3,6 +3,7 @@ package com.geodeveloper.theholyquran
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.geodeveloper.theholyquran.activities.AudioQuranListActivity
 import com.geodeveloper.theholyquran.activities.EnglishQuranActivity
 import com.geodeveloper.theholyquran.activities.QuranActivity
 import com.geodeveloper.theholyquran.activities.QuranEditionActivity
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         }
         main_readQuran.setOnClickListener {
             startActivity(Intent(this,QuranActivity::class.java))
+        }
+        main_quranQudio.setOnClickListener {
+            startActivity(Intent(this,AudioQuranListActivity::class.java))
         }
     }
 }

@@ -10,6 +10,7 @@ import com.geodeveloper.theholyquran.adapters.DisplayEnglishQuranAdapter
 import com.geodeveloper.theholyquran.models.englishquran.AyahModel
 import kotlinx.android.synthetic.main.activity_english_quran.*
 import kotlinx.android.synthetic.main.activity_read_arabic_quran.*
+import java.lang.IllegalStateException
 
 class ReadArabicQuran : AppCompatActivity() {
     var surah = ArrayList<AyahModel>()
@@ -46,6 +47,13 @@ class ReadArabicQuran : AppCompatActivity() {
             if (page < endPage) {
                 page++
                 getAyahLists()
+                try {
+                    adapter!!.mediaPlayer!!.reset()
+                }catch (e:IllegalStateException){}
+                try {
+                    adapter!!.mediaPlayer!!.release()
+                }catch (e:IllegalStateException){}
+
             } else {
                 Toast.makeText(this, "limit reached", Toast.LENGTH_LONG).show()
             }
@@ -55,6 +63,13 @@ class ReadArabicQuran : AppCompatActivity() {
             if (page > startPage) {
                 page--
                 getAyahLists()
+                try {
+                    adapter!!.mediaPlayer!!.reset()
+                }catch (e: IllegalStateException){}
+                try {
+                    adapter!!.mediaPlayer!!.release()
+                }catch (e:IllegalStateException){}
+
             } else {
                 Toast.makeText(this, "limit reached", Toast.LENGTH_LONG).show()
             }
